@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from 'react'
 
 function Slider({ setOpacity, label }) {
     const input = useRef()
-    const klik = useState(false)
 
     useEffect(() => {
         input.current.value = 100

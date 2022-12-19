@@ -12,7 +12,7 @@ const Main = () => {
   const [basemap, setBasemap] = useState("https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}");
   const [opacityBasemap, setOpacityBasemap] = useState(100);
   const [opacityBangunan, setOpacityBangunan] = useState(100);
-
+  const [opacityBatas, setOpacityBatas] = useState(100);
 
   return (
     <div>
@@ -27,12 +27,6 @@ const Main = () => {
           />
         }
       />
-      <Map
-        setOpen={setOpen}
-        basemap={basemap}
-        opacityBasemap={opacityBasemap}
-        opactiyBangunan={opacityBangunan}
-      />
       <SidebarContainer
         component={
           <Layer
@@ -40,8 +34,16 @@ const Main = () => {
             jenis="Layer"
             setOpacityBasemap={setOpacityBasemap}
             setOpacityBangunan={setOpacityBangunan}
+            setOpacityBatas={setOpacityBatas}
           />
         }
+      />
+      <Map
+        setOpen={setOpen}
+        basemap={basemap}
+        opacityBasemap={opacityBasemap}
+        opacityBangunan={opacityBangunan}
+        opacityBatas={opacityBatas}
       />
     </div>
   )

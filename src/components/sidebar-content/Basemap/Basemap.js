@@ -1,19 +1,13 @@
 import React from 'react'
-import OpenStreetMap from '../../../assets/images/Basemap/OpenStreetMap.jpg'
-import EsriWorldImagery from '../../../assets/images/Basemap/EsriWorldImagenery.jpg'
-import EsriToPo from '../../../assets/images/Basemap/EsriToPo.jpg'
-import OpenToPo from '../../../assets/images/Basemap/OpenToPo.jpg'
-import StadiaDark from '../../../assets/images/Basemap/StadiaDark.jpg'
-import GoogleMaps from '../../../assets/images/Basemap/GoogleMaps.jpg'
+import RBI from '../../../assets/images/Basemap/RBI.jpg'
 import GoogleStreet from '../../../assets/images/Basemap/GoogleStreet.jpg'
-import EsriStreet from '../../../assets/images/Basemap/EsriStreetMap.jpg'
-import CartoDb from '../../../assets/images/Basemap/CartoDb.jpg'
+import GoogleSatellite from '../../../assets/images/Basemap/GoogleSatellite.jpg'
 
 const jenisBasemap = [
   {
-    url: "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
-    nama: "Google Satelite",
-    gambar: GoogleMaps,
+    url: "https://geoservices.big.go.id/rbi/rest/services/BASEMAP/Rupabumi_Indonesia/MapServer/tile/{z}/{y}/{x}",
+    nama: "Rupa Bumi Indonesia",
+    gambar: RBI,
   },
   {
     url: "https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
@@ -21,39 +15,9 @@ const jenisBasemap = [
     gambar: GoogleStreet,
   },
   {
-    url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
-    nama: "Esri WorldStreetMap",
-    gambar: EsriStreet,
-  },
-  {
-    url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-    nama: "OpenStreetMap",
-    gambar: OpenStreetMap,
-  },
-  {
-    url: "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png",
-    nama: "CartoDB",
-    gambar: CartoDb,
-  },
-  {
-    url: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
-    nama: "OpenTopoMap",
-    gambar: OpenToPo,
-  },
-  {
-    url: "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
-    nama: "Stadia.AlidadeSmoothDark",
-    gambar: StadiaDark,
-  },
-  {
-    url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-    nama: "Esri.WorldImagery",
-    gambar: EsriWorldImagery,
-  },
-  {
-    url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
-    nama: "Esri.WorldTopoMap",
-    gambar: EsriToPo,
+    url: "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}",
+    nama: "Google Satellite",
+    gambar: GoogleSatellite,
   },
 ];
 
@@ -61,7 +25,7 @@ const jenisBasemap = [
 function Basemap({ setInputBasemap, inputBasemap, open, jenis }) {
 
   return (
-    <div className='w-30 px-0 py-2 duration-500 overflow-y-scroll h-screen scrollBar'
+    <div className='w-35 px-0 py-0 duration-500 '
       style={open === jenis ? { marginLeft: "50px" } : { marginLeft: "-300px" }}
     >
       {jenisBasemap.map((basemap) => {
